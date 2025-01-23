@@ -1,9 +1,11 @@
 import singleSpaReact from 'single-spa-react';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import Dashboard from './Dashboard';
 
 const lifecycles = singleSpaReact({
-  React: require('react'),
-  ReactDOM: require('react-dom'),
+  React,
+  ReactDOM,
   rootComponent: Dashboard,
   errorBoundary(err: Error) {
     return (
