@@ -1,16 +1,18 @@
+import { singleSpaReact } from 'single-spa-react';
 import Settings from './Settings';
 
-const lifecycles = {
-  bootstrap: () => Promise.resolve(),
-  mount: (props: any) => {
-    const container = document.querySelector('#single-spa-application\\:@mfe\\/settings');
-    if (container) {
-      container.innerHTML = '<div>Settings MFE Mounted</div>';
-    }
-    return Promise.resolve();
-  },
-  unmount: () => Promise.resolve()
-};
+const lifecycles = singleSpaReact({
+  React: require('react'),
+  ReactDOM: require('react-dom'),
+  rootComponent: Settings,
+  errorBoundary(err: Error) {
+    return (
+      <div className="text-red-500">
+        Settings MFE Error: {err.message}
+      </div>
+    );
+  }
+});
 
 export const { bootstrap, mount, unmount } = lifecycles;
 export default lifecycles;
