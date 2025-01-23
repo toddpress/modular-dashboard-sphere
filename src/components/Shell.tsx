@@ -41,8 +41,8 @@ const Shell = () => {
 
       {/* Main Content */}
       <div className="flex-1 p-8">
-        <main id="single-spa-application:@mfe/dashboard"></main>
-        <main id="single-spa-application:@mfe/settings"></main>
+        <div id="single-spa-application:@mfe/dashboard"></div>
+        <div id="single-spa-application:@mfe/settings"></div>
       </div>
     </div>
   );
