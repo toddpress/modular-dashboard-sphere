@@ -1,4 +1,4 @@
-import { singleSpaReact } from 'single-spa-react';
+import singleSpaReact from 'single-spa-react';
 import Dashboard from './Dashboard';
 
 const lifecycles = singleSpaReact({
