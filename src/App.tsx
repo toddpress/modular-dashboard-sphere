@@ -1,5 +1,5 @@
 import { registerApplication, start } from 'single-spa';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,13 +22,13 @@ registerApplication({
 start();
 
 const App = () => (
-  <BrowserRouter>
+  <Router>
     <TooltipProvider>
       <Shell />
       <Toaster />
       <Sonner />
     </TooltipProvider>
-  </BrowserRouter>
+  </Router>
 );
 
 export default App;
